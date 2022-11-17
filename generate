@@ -1,0 +1,14 @@
+#!/usr/bin/env bqn
+
+"Usage: ./generate name-of-builder path/to/builder path/to/mlochbaum/BQN path/to/CBQN"!4≤≠•args
+builderName‿builderDir‿bqn‿cbqn ← 4↑•args
+GetCommit ← {1⊑•SH "git"‿"-C"‿𝕩‿"rev-parse"‿"HEAD"}
+
+info ← ""
+info∾↩ "mlochbaum/BQN at "∾GetCommit bqn
+info∾↩ "CBQN at "∾GetCommit cbqn
+info∾↩ "built with "∾builderName∾GetCommit builderDir
+
+"info" •FChars info
+
+⟨bqn, •file.At "."⟩ •Import cbqn•file.At "genRuntime"

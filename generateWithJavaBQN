@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+
+java -jar "$1/BQN.jar" ./generate "Java BQN " "$1" "$2" "$3"
