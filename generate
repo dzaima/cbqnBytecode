@@ -11,4 +11,4 @@ info∾↩ "built with "∾builderName∾GetCommit builderDir
 
 "info" •FChars info
 
-⟨bqn, •file.At "."⟩ •Import cbqn•file.At "genRuntime"
+⟨bqn, •file.At "."⟩ •Import cbqn•file.At "build/genRuntime"
